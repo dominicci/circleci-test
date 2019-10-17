@@ -16,7 +16,7 @@ jobs:
             - echo-output
   two:
     docker:
-      - image: circleci/ruby:2.4.1
+      - image: circleci/node:carbon
     steps:
       - checkout
       - run: echo "hello again"
