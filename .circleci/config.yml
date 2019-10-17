@@ -8,7 +8,7 @@ jobs:
       - run: echo "--> testing <--"
       - run: mkdir -p my_workspace
       - run: echo "Testing workspaces" > my_workspace/echo-output
-      - persist_to_workspaces:
+      - persist_to_workspace:
           # this must be an absolute path, or relative path from working_directory
           root: my_workspace
           # must be relative path from root
@@ -16,7 +16,7 @@ jobs:
             - echo-output
   two:
     docker:
-      - image: circleci/node:carbon
+      - image: circleci/ruby:2.4.1
     steps:
       - checkout
       - run: echo "hello again"
